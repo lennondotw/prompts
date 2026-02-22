@@ -45,6 +45,11 @@
 - Write unit tests with **React Testing Library**; test behavior and user interactions, not implementation details.
 - Provide **Storybook** stories for each component covering all meaningful variants: default, loading, empty, error, edge cases, and responsive breakpoints.
 
+## Dependencies
+
+- Prefer well-maintained libraries over hand-rolling solutions. Evaluate before adopting: ESM support, TypeScript types, download volume, recent commit activity, and documentation quality.
+- If no library meets the quality bar, implement it yourself.
+
 ## Custom Hooks
 
 - Extract reusable logic into custom hooks; name them `use*`.
