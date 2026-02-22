@@ -1,6 +1,6 @@
 words:
+  - oxlint
   - xcbeautify
-
 ignorePaths:
-  - '**/node_modules/'
+  - "**/node_modules/"
   - pnpm-lock.yaml
