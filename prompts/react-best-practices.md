@@ -6,6 +6,7 @@
 - Prefer composition over configuration — pass JSX as children or render props instead of adding more props to a component.
 - Keep components small and single-responsibility; extract early when a component handles more than one concern.
 - Co-locate related code (component, hook, types, styles) in the same directory.
+- Prefer named exports over default exports for better refactoring support and explicit imports, unless the framework requires default exports (e.g., route pages, layouts).
 
 ## State
 
