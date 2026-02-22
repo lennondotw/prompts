@@ -14,6 +14,9 @@ importers:
       '@commitlint/config-conventional':
         specifier: ^20.4.2
         version: 20.4.2
+      dprint:
+        specifier: ^0.51.1
+        version: 0.51.1
       husky:
         specifier: ^9.1.7
         version: 9.1.7
@@ -99,6 +102,68 @@ packages:
   '@commitlint/types@20.4.0':
     resolution: {integrity: sha512-aO5l99BQJ0X34ft8b0h7QFkQlqxC6e7ZPVmBKz13xM9O8obDaM1Cld4sQlJDXXU/VFuUzQ30mVtHjVz74TuStw==}
     engines: {node: '>=v18'}
+
+  '@dprint/darwin-arm64@0.51.1':
+    resolution: {integrity: sha512-C7fkaz0/NGf/X4G9Cq65izdJgerND5jWShOaPiOgGs4A0CyCMKMLRd45m3xKIttuO8x0IQiZVixD22qmVglXmQ==}
+    cpu: [arm64]
+    os: [darwin]
+
+  '@dprint/darwin-x64@0.51.1':
+    resolution: {integrity: sha512-/CESb4SJejshTWb/nO2gucrioKdLD/fK2gKB5Immi4XecAjhkV1HZpUMRLsIeVDQ6ha7xktKbnnvudJRI0maSg==}
+    cpu: [x64]
+    os: [darwin]
+
+  '@dprint/linux-arm64-glibc@0.51.1':
+    resolution: {integrity: sha512-W+QD/4TkQKMPq02uz+ZIz/EI91YEtS2zHBu/Jihx2lfNh3HjUKgyY1KfqCTg2WGJVDkJtPc5KDw+M8yd4rI+Rg==}
+    cpu: [arm64]
+    os: [linux]
+    libc: [glibc]
+
+  '@dprint/linux-arm64-musl@0.51.1':
+    resolution: {integrity: sha512-P4Cfn8wrdSvdoMoz0HtsC5zZpbh8Kk3OjRzgG4qs/gub5Ba3CCLcVaQvQmIOCvgPzdhPB41eSn5qAK87mh7vCQ==}
+    cpu: [arm64]
+    os: [linux]
+    libc: [musl]
+
+  '@dprint/linux-loong64-glibc@0.51.1':
+    resolution: {integrity: sha512-dxDShELBrSGB9PktRqhYrm1UWCL+7N430rGuDTFg+i4d1wL4JD7EI5NDS/5IVbg3lrKJUu6gAJoY9NWF4sZ0mQ==}
+    cpu: [loong64]
+    os: [linux]
+    libc: [glibc]
+
+  '@dprint/linux-loong64-musl@0.51.1':
+    resolution: {integrity: sha512-l+uNPzUBNxkywGN1HgvTV0CzUDpzXC+s6VEvjYRdVAEKl9TAsIfLMfZifS8rnlOi9hz/0sckmpny+wL40G6dhQ==}
+    cpu: [loong64]
+    os: [linux]
+    libc: [musl]
+
+  '@dprint/linux-riscv64-glibc@0.51.1':
+    resolution: {integrity: sha512-YI6SemJRMsLUrtognhkAYOJ67j/AkiufHfx6+cPv/7qO6zBoBL6otR1e5yFYvAgEJOzRZD5g51EdqCcuK19B+g==}
+    cpu: [riscv64]
+    os: [linux]
+    libc: [glibc]
+
+  '@dprint/linux-x64-glibc@0.51.1':
+    resolution: {integrity: sha512-Hm9ntOWeclXU6/rZGYIN2XjuAhsRUZ77lRJC5EiM1rP6Ayh0J/YMsDdqlPAs+xZGdFFzt8ZeUpqJJJsbc54ZjQ==}
+    cpu: [x64]
+    os: [linux]
+    libc: [glibc]
+
+  '@dprint/linux-x64-musl@0.51.1':
+    resolution: {integrity: sha512-iUs/9Z4Ky6+2GAK+i1jF1ZwM27CSIGaqw3LxTXtmE8eBCRwyCW+opzn9bzaFtlT9REUAGMC5PXihAPmzP3ttWg==}
+    cpu: [x64]
+    os: [linux]
+    libc: [musl]
+
+  '@dprint/win32-arm64@0.51.1':
+    resolution: {integrity: sha512-oXjEL7Blf/160/j7U8MapRzSOVQvLIdAKEZbslIHA4Fwj10fvoDizqpfVU/aVj/BVrlIcZ/+AH8kfSC9XAyjLw==}
+    cpu: [arm64]
+    os: [win32]
+
+  '@dprint/win32-x64@0.51.1':
+    resolution: {integrity: sha512-RM9thb/+Jm6GkXJS+eW+0Pzmz2PNeDk8ZOWcjunE1jv2RabHgm+GbeGpS+WZPOM9W3LSntswv6f4wjzfUkWD0g==}
+    cpu: [x64]
+    os: [win32]
 
   '@nodelib/fs.scandir@2.1.5':
     resolution: {integrity: sha512-vq24Bq3ym5HEQm2NKCr3yXDwjc7vTsEThRDnkp2DK9p1uqLR+DHurm/NOTo0KG7HYHU7eppKZj3MyqYuMBf62g==}
@@ -243,6 +308,10 @@ packages:
   dot-prop@5.3.0:
     resolution: {integrity: sha512-QM8q3zDe58hqUqjraQOmzZ1LIH9SWQJTlEKCH4kJ2oQvLZk7RbQXvtDM2XEq3fwkV9CCvvH4LA0AV+ogFsBM2Q==}
     engines: {node: '>=8'}
+
+  dprint@0.51.1:
+    resolution: {integrity: sha512-CEx+wYARxLAe9o7RCZ77GKae6DF7qjn5Rd98xbWdA3hB4PFBr+kHwLANmNHscNumBAIrCg5ZJj/Kz+OYbJ+GBA==}
+    hasBin: true
 
   emoji-regex@8.0.0:
     resolution: {integrity: sha512-MSjYzcWNOA0ewAHpz0MxpYFvwg6yjy1NG3xteoqz644VCo/RPgnr1/GGt+ic3iJTzQ8Eu3TdM14SawnVUmGE6A==}
@@ -768,6 +837,39 @@ snapshots:
       conventional-commits-parser: 6.2.1
       picocolors: 1.1.1
 
+  '@dprint/darwin-arm64@0.51.1':
+    optional: true
+
+  '@dprint/darwin-x64@0.51.1':
+    optional: true
+
+  '@dprint/linux-arm64-glibc@0.51.1':
+    optional: true
+
+  '@dprint/linux-arm64-musl@0.51.1':
+    optional: true
+
+  '@dprint/linux-loong64-glibc@0.51.1':
+    optional: true
+
+  '@dprint/linux-loong64-musl@0.51.1':
+    optional: true
+
+  '@dprint/linux-riscv64-glibc@0.51.1':
+    optional: true
+
+  '@dprint/linux-x64-glibc@0.51.1':
+    optional: true
+
+  '@dprint/linux-x64-musl@0.51.1':
+    optional: true
+
+  '@dprint/win32-arm64@0.51.1':
+    optional: true
+
+  '@dprint/win32-x64@0.51.1':
+    optional: true
+
   '@nodelib/fs.scandir@2.1.5':
     dependencies:
       '@nodelib/fs.stat': 2.0.5
@@ -893,6 +995,20 @@ snapshots:
   dot-prop@5.3.0:
     dependencies:
       is-obj: 2.0.0
+
+  dprint@0.51.1:
+    optionalDependencies:
+      '@dprint/darwin-arm64': 0.51.1
+      '@dprint/darwin-x64': 0.51.1
+      '@dprint/linux-arm64-glibc': 0.51.1
+      '@dprint/linux-arm64-musl': 0.51.1
+      '@dprint/linux-loong64-glibc': 0.51.1
+      '@dprint/linux-loong64-musl': 0.51.1
+      '@dprint/linux-riscv64-glibc': 0.51.1
+      '@dprint/linux-x64-glibc': 0.51.1
+      '@dprint/linux-x64-musl': 0.51.1
+      '@dprint/win32-arm64': 0.51.1
+      '@dprint/win32-x64': 0.51.1
 
   emoji-regex@8.0.0: {}
 

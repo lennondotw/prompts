@@ -5,12 +5,15 @@
   "type": "module",
   "scripts": {
     "prepare": "husky",
+    "fmt": "dprint fmt",
+    "fmt:check": "dprint check",
     "lint:md": "markdownlint-cli2 '**/*.md' '#node_modules'"
   },
   "packageManager": "pnpm@10.28.2",
   "devDependencies": {
     "@commitlint/cli": "^20.4.2",
     "@commitlint/config-conventional": "^20.4.2",
+    "dprint": "^0.51.1",
     "husky": "^9.1.7",
     "markdownlint-cli2": "^0.21.0"
   }
