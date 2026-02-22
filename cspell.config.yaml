@@ -1,5 +1,8 @@
 words:
+  - basedpyright
   - oxlint
+  - pyproject
+  - pytest
   - xcbeautify
 ignorePaths:
   - "**/node_modules/"
