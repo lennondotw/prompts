@@ -1,0 +1,30 @@
+# Auto detect text files and perform LF normalization
+* text=auto eol=lf
+
+# Explicitly declare text files
+*.md text diff=markdown
+*.txt text
+*.json text
+*.yaml text
+*.yml text
+*.toml text
+*.js text
+*.ts text
+*.css text
+*.html text
+
+# Declare binary files
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.gif binary
+*.ico binary
+*.webp binary
+*.woff binary
+*.woff2 binary
+*.ttf binary
+*.eot binary
+*.pdf binary
+
+# Linguist overrides
+pnpm-lock.yaml linguist-generated

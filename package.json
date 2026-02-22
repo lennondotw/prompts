@@ -1,0 +1,17 @@
+{
+  "name": "prompts",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "prepare": "husky",
+    "lint:md": "markdownlint-cli2 '**/*.md' '#node_modules'"
+  },
+  "packageManager": "pnpm@10.28.2",
+  "devDependencies": {
+    "@commitlint/cli": "^20.4.2",
+    "@commitlint/config-conventional": "^20.4.2",
+    "husky": "^9.1.7",
+    "markdownlint-cli2": "^0.21.0"
+  }
+}
