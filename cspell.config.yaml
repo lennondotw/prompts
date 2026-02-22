@@ -4,6 +4,7 @@ words:
   - oxlint
   - pyproject
   - pytest
+  - reorderable
   - xcbeautify
 ignorePaths:
   - "**/node_modules/"
