@@ -1,5 +1,6 @@
 words:
   - basedpyright
+  - cmdk
   - oxlint
   - pyproject
   - pytest
