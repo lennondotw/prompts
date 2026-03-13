@@ -20,7 +20,7 @@ For the complete base config reference JSON and compiler option rationale, see [
 Give every workspace project its own `tsconfig.json` that extends the shared base. In the minimal case, only two fields are needed:
 
 - **`rootDir`** — typically `"."` (the project root)
-- **`outDir`** — a path under `node_modules/.tmp/tsc-out/` by convention
+- **`outDir`** — a path under `dist/ts/` by convention (e.g. `dist/ts/default/`)
 
 Inherit all other compiler options from the base. Add overrides only when the project's runtime environment differs:
 
@@ -64,11 +64,11 @@ Create a root `tsconfig.json` with `files: []` and `references` listing every su
 
 ## pnpm Workspace Commands
 
-| Command                                   | Scope                                         |
-| ----------------------------------------- | --------------------------------------------- |
-| `pnpm --filter <pkg> run typecheck`       | The package itself                            |
-| `pnpm --filter <pkg>... run typecheck`    | The package and all upstream dependencies     |
-| `pnpm --filter '*' run typecheck`         | All packages in the workspace                 |
+| Command                                | Scope                                     |
+| -------------------------------------- | ----------------------------------------- |
+| `pnpm --filter <pkg> run typecheck`    | The package itself                        |
+| `pnpm --filter <pkg>... run typecheck` | The package and all upstream dependencies |
+| `pnpm --filter '*' run typecheck`      | All packages in the workspace             |
 
 For full workspace type-checking:
 

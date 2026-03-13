@@ -109,8 +109,8 @@ Tests import from `src/`, so `tsconfig.test.json` should declare a reference to 
   "extends": "<shared-base>/base.json",
   "compilerOptions": {
     "rootDir": ".",
-    "outDir": "node_modules/.tmp/tsc-test/",
-    "tsBuildInfoFile": "node_modules/.tmp/tsc-test/.tsbuildinfo"
+    "outDir": "dist/ts/test/",
+    "tsBuildInfoFile": "dist/ts/test/.tsbuildinfo"
   },
   "include": ["src", "tests"],
   "references": [{ "path": "./tsconfig.app.json" }]
