@@ -39,7 +39,7 @@ Maintain border-radius concentricity: `inner-radius = outer-radius − border-wi
 
 **Touch targets** — For buttons and clickable elements with small visual footprints, use an absolutely positioned `::after` pseudo-element (or a child div) with negative inset to expand the interactive area to at least 44×44px without affecting layout.
 
-**Animations** — Use Motion (framer-motion). Always call `useReducedMotion()` and skip or simplify animation when true. This also ensures deterministic screenshot testing.
+**Animations** — Use Motion (previously Framer Motion). Always call `useReducedMotion()` and skip or simplify animation when true. This also ensures deterministic screenshot testing.
 
 ### Phase 3: Stories
 
