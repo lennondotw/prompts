@@ -1,3 +1,8 @@
+---
+name: web-ui-standards
+description: Web UI standards covering Tailwind CSS, Radix UI, accessibility, animations, responsive layout, and pixel-perfect alignment. Use when building or reviewing web UI components, styling, animations, accessibility, dark mode, or when the user mentions UI standards or design system conventions.
+---
+
 # Web UI Standards
 
 - Use **Tailwind CSS** v4 for styling; prefer utility classes over custom CSS.

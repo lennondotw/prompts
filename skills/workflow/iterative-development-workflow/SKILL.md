@@ -1,3 +1,8 @@
+---
+name: iterative-development-workflow
+description: Iterative development workflow with small reviewable steps, CI polling, and agent logging. Use when starting a multi-step implementation, when the user asks about development workflow, CI integration, or iterative coding practices.
+---
+
 # Iterative Development Workflow
 
 Work iteratively in small, reviewable steps.
@@ -9,10 +14,10 @@ Work iteratively in small, reviewable steps.
 - Use `gh` to poll CI status every 10s; do not hand off until CI passes.
 - Before starting the next iteration, ensure the working directory is clean and the repo is healthy.
 
-Logging
+## Logging
 
 - Record a log for each iteration at:
   `.agent/logs/YYYYMMDD-HHMMSS-slug-task-name.md`
 - Ensure `.agent/logs/` is in `.gitignore` and never committed.
 
-Only after CI passes, deliver the result to me for final verification/testing, then proceed to the next iteration.
+Only after CI passes, deliver the result for final verification/testing, then proceed to the next iteration.

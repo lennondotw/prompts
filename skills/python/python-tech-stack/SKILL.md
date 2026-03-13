@@ -1,3 +1,8 @@
+---
+name: python-tech-stack
+description: Python project setup and toolchain configuration. Use when creating a new Python project, setting up Python toolchain, or when the user asks about Python tech stack, uv, Ruff, pytest, or Python dependency management.
+---
+
 # Python Tech Stack
 
 Set up the Python toolchain and project with:

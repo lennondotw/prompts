@@ -1,3 +1,8 @@
+---
+name: react-best-practices
+description: React component, state, effects, and performance best practices. Use when writing, reviewing, or refactoring React components, hooks, state management, or when the user asks about React patterns, useEffect rules, or component design.
+---
+
 # React Best Practices
 
 ## Components

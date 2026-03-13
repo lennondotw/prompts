@@ -1,3 +1,8 @@
+---
+name: android-tech-stack
+description: Android project setup and toolchain configuration. Use when creating a new Android project, setting up Android build configuration, or when the user asks about Android tech stack, Gradle, Jetpack Compose, or Android dependencies.
+---
+
 # Android Tech Stack
 
 Set up the Android toolchain and project with:
@@ -16,4 +21,4 @@ Set up the Android toolchain and project with:
 - JUnit 5 + Robolectric for unit tests
 - just for task orchestration
 
-Use the latest stable Android toolchain (AGP, Kotlin, Compose BOM, AndroidX): do not assume versions—verify via web search, then pin and document them in `libs.versions.toml`.
+Use the latest stable Android toolchain (AGP, Kotlin, Compose BOM, AndroidX): do not assume versions — verify via web search, then pin and document them in `libs.versions.toml`.
