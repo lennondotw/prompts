@@ -16,3 +16,4 @@
 - Always use the latest stable SDKs and APIs, and target the latest stable OS/platform versions. Do not assume what “latest” is—verify via web search before answering. Apply this consistently to Apple (iOS/macOS/watchOS/tvOS/visionOS), Android, React, and any related toolchains.
 - Always add `#Preview { ... }` for SwiftUI views.
 - ASCII diagrams must use ASCII-only characters. Chinese characters and emoji may break alignment in monospaced fonts.
+- Prefer spawning subagents (via Task tool) for independent, well-scoped subtasks. Subagents operate with clean, focused context—often producing more objective, noise-free results. However, your broader conversation context provides valuable continuity and cross-task awareness. When subagent results return, synthesize them critically: verify alignment with overall goals, resolve conflicts with your fuller context, and integrate findings rather than accepting them blindly.
