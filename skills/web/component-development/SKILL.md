@@ -9,10 +9,33 @@ description: UI component development workflow for building and verifying React 
 
 ### Phase 1: Design Extraction
 
+**Step 1: High-level reconnaissance**
+
 1. Fetch Figma node via MCP (`get_design_context`, `get_screenshot`).
-2. Take a screenshot first — confirm the overall visual: layout structure, hierarchy, proportions, and color balance before diving into individual values.
-3. Record every spec: font family, weight, size, line-height, letter-spacing, text-align, text-transform, text-decoration, color (with opacity), background (solid, gradient), padding, margin, gap, width/height (including min/max constraints), border-radius, border-width, box-shadow, opacity, overflow, and icon sizing.
-4. Map Figma tokens to project design system tokens where they exist; use raw values only when no token matches.
+2. Take a screenshot first — confirm the overall visual: layout structure, hierarchy, proportions, and color balance.
+3. Identify distinct components or layers that need detailed extraction (e.g. header, card, button, icon group).
+
+**Step 2: Parallel deep-dive**
+
+For each identified component/layer, spawn a subagent in parallel to extract detailed specs:
+
+- Font: family, weight, size, line-height, letter-spacing, text-align, text-transform, text-decoration.
+- Color: foreground, background (solid/gradient), border, opacity.
+- Spacing: padding, margin, gap.
+- Dimensions: width, height, min/max constraints.
+- Effects: border-radius, border-width, box-shadow, opacity, overflow.
+- Icons: sizing, stroke width, color.
+
+Each subagent should:
+
+1. Fetch the specific node's `get_design_context` and `get_screenshot`.
+2. Record all specs exhaustively.
+3. Map Figma tokens to project design system tokens where they exist; use raw values only when no token matches.
+4. Return a structured spec object for the component.
+
+**Step 3: Synthesis**
+
+Collect and merge all subagent results into a unified design spec before proceeding to implementation.
 
 ### Phase 2: Implementation
 
