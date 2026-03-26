@@ -1,9 +1,9 @@
 ---
-name: component-development
+name: web-component-development
 description: UI component development workflow for building and verifying React components from Figma designs. Use when creating new components, implementing designs from Figma, building UI primitives, or iterating on visual fidelity. Covers the full cycle from Figma extraction through browser verification, Storybook stories, and testing.
 ---
 
-# Component Development
+# Web Component Development
 
 ## Workflow
 
