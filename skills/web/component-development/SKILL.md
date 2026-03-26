@@ -47,6 +47,16 @@ Collect and merge all subagent results into a unified design spec before proceed
 
 ### Phase 2: Implementation
 
+**Start small. Start simple.**
+
+Build the smallest possible working version first with an elegant, minimal API.
+
+- Do NOT add anything beyond what the design shows — no bonus features, no "improvements", no embellishments.
+- Do NOT write hacky code — if the approach feels wrong, step back and redesign.
+- Do NOT over-engineer for hypothetical future requirements.
+
+Once verified correct, we incrementally add functionality.
+
 Write the component following these principles:
 
 **Design fidelity** — Faithfully convey the design's _intent_, not pixel-for-pixel reproduction of static values. Round obviously unreasonable fractional values that are Figma artifacts (e.g. `12.1px` → `12px`). Adapt static layouts to responsive/interactive reality. The design is a communication, not a specification.
@@ -111,11 +121,18 @@ Only after all tests pass and browser verification is complete:
 
 ## Decomposition
 
-For large or complex components, decompose into smaller, self-contained sub-components first. Build each sub-component through the full cycle (implementation → stories → browser verification → tests) independently. Only compose them into the parent component after each sub-component is verified and stable across all states.
+**Always build bottom-up: atomic components first, then compose.**
+
+1. Identify the smallest, most reusable pieces (buttons, icons, badges, text styles).
+2. Build each atomic component through the full cycle (implementation → stories → browser verification → tests) independently.
+3. Only after each atomic component is verified and stable, compose them into molecules (card, list item, form field).
+4. Continue composing upward into organisms and full layouts.
+
+Do NOT build top-down by creating a large component and extracting pieces later — this leads to tightly coupled, hard-to-test code.
 
 ## Separation of Concerns
 
-For complex components, split into two layers:
+For any component with non-trivial logic, split presentation from logic:
 
 | Layer            | Responsibility                                                                                            | Tests                                                 |
 | ---------------- | --------------------------------------------------------------------------------------------------------- | ----------------------------------------------------- |
@@ -123,6 +140,12 @@ For complex components, split into two layers:
 | **Container**    | Data fetching, state management, event handling. Composes presentation components.                        | Unit tests for logic, integration tests for data flow |
 
 Presentation components must render identically given the same props — no internal randomness, no time-dependent rendering.
+
+This separation is NOT optional for complex components. It enables:
+
+- Independent visual iteration in Storybook without mocking data layers.
+- Logic testing without rendering overhead.
+- Reuse of presentation across different data sources.
 
 ## Anti-Patterns
 
