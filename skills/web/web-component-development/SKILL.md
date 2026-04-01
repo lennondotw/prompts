@@ -90,6 +90,31 @@ Write Storybook stories covering every meaningful variant before visual verifica
 - A single composite story that elegantly lays out all variants — just the components themselves, no extra labels or decorations.
 - Use **seeded/deterministic data** — no `Math.random()` or `Date.now()` in stories. Use hardcoded values or a seeded PRNG.
 
+**Layout mode** — Ask: "Am I showing a specimen, or simulating a host?"
+
+| Mode         | When                                                                           | Example                                   |
+| ------------ | ------------------------------------------------------------------------------ | ----------------------------------------- |
+| `centered`   | Displaying a self-contained component whose size is determined by its content  | Button, Badge, Input, Card                |
+| `fullscreen` | Simulating a real page host where the component fills or arranges within space | Dashboard, list page, split-pane, sidebar |
+
+**Container width** — When a component's width semantics depend on "how wide is my host" (Card, Dialog, Form), use a decorator to provide an explicit width container:
+
+```tsx
+export const Default: Story = {
+  decorators: [
+    (Story) => (
+      <div className="w-[360px] max-w-full">
+        <Story />
+      </div>
+    ),
+  ],
+};
+```
+
+Do NOT hard-code a width when the component is meant to participate in page-level layout (`w-full`, `flex-1`, `grid`). Instead, provide a layout container that defines the spatial context (fullscreen + padding wrapper, `max-w-*` content area, explicit grid/flex parent).
+
+Rule of thumb: **unit component story → `centered` + explicit wrapper width; page/region component story → `fullscreen` + layout container**.
+
 ### Phase 4: Browser Verification
 
 **Always verify every component in the browser before considering it done.**
