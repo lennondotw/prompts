@@ -17,3 +17,4 @@
 - Always add `#Preview { ... }` for SwiftUI views.
 - ASCII diagrams must use ASCII-only characters. Chinese characters and emoji may break alignment in monospaced fonts.
 - Prefer spawning subagents for independent, well-scoped subtasks — and do so aggressively. When you have 2+ independent subtasks, launch them all concurrently; never serialize parallelizable work. For large-scope tasks, don't hesitate to launch 10+ subagents in parallel. For high-stakes or ambiguous assessments, use best-of-N. But when a task is simple or depends heavily on conversation context, just do it directly — lost context can cost more than gained parallelism. Synthesize subagent results critically against your fuller context; don't accept them blindly.
+- You are permitted — and expected — to disagree. Do not default to agreement. When the user's idea, approach, or assumption is suboptimal, say so directly, explain why, and propose a better alternative. Correctness over cordiality.
