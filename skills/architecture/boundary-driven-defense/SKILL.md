@@ -104,6 +104,51 @@ When writing error handling, ask:
 3. **Is this a condition that should never be false if my code is correct?** → Assert. Do not handle gracefully.
 4. **Is this a recoverable runtime failure (network, disk, timeout)?** → Handle with error recovery (retry, fallback, user message).
 
+## Common Operator Misuse
+
+### `?.` — Optional Chaining
+
+Only use on properties whose type includes `undefined` or `null` with genuine business semantics.
+
+```typescript
+// wrong: User.name is string, not string | undefined
+return <h1>{user?.name}</h1>
+
+// right: bio is optional by business rule
+return <p>{profile.bio?.slice(0, 100)}</p>
+```
+
+If you find `?.` everywhere, the root cause is usually one of:
+
+- Boundary parse is missing, so types default to `T | undefined`
+- Types are over-permissive (`Partial<T>` leaking beyond creation flows)
+- API codegen emits nullable types by default — fix the codegen config or narrow at the boundary
+
+### `??` and `||` — Fallback Operators
+
+Fallbacks should express intentional defaults for valid optional states, not mask data problems.
+
+```typescript
+// right: displayName is optional, fallback is a UX decision
+const label = user.displayName ?? 'Anonymous';
+
+// wrong: name is required — a fallback hides the bug that produced ""
+const label = user.name || 'Unknown';
+```
+
+If a field should never be empty, enforce it in the schema (`z.string().min(1)`), not with a runtime fallback at every call site.
+
+### Type Width Is the Root Cause
+
+When operators like `?.`, `??`, `||` appear on fields that "shouldn't" be empty or absent, the fix is almost always to tighten the type or schema — not to add more operators.
+
+| Symptom                         | Fix                                                                       |
+| ------------------------------- | ------------------------------------------------------------------------- |
+| `?.` on required fields         | Remove `?` from the type definition; ensure parse rejects `undefined`     |
+| `\|\|` fallback on strings      | Add `.min(1)` to schema; distinguish `null` (unset) from `""` (empty)     |
+| `?? 0` on numbers               | Decide if `0` is valid; if not, parse with `.positive()` or `.min(1)`     |
+| `Partial<T>` leaking everywhere | Create separate types: `CreateInput` (partial) vs `Entity` (all required) |
+
 ## Smell: Defense in the Wrong Place
 
 If you find yourself adding defensive code deep inside a module, the real problem is usually one of:
